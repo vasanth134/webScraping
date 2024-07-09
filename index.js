@@ -39,5 +39,3 @@ await browser.close();
 
 
 
-// await page.type('#username', 'petotef648@apn7.com' ,{delay:200});
-// await page.type('#password','webscraping@123', {delay:200});
