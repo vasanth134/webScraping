@@ -5,7 +5,12 @@ require('dotenv').config();
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     
-    await page.goto('https://www.linkedin.com/login');
+    await page.goto('https://in.linkedin.com/');
+
+await page.click('.nav__button-secondary.btn-md.btn-secondary-emphasis');
+
+
+    // await page.goto('https://www.linkedin.com/login');
 
     // Log in
     await page.type('#username',process.env.LINKEDIN_USERNAME ,{delay : 100});
@@ -16,6 +21,7 @@ require('dotenv').config();
     // Navigate to profile
     await page.goto('https://www.linkedin.com/in/web-scraping-1bb834317/');
     // await page.waitForXPath('//*[@id="ember420"]/h1');
+
     await page.waitForSelector('.text-heading-xlarge');
     // Scrape data
     const nameElement = await page.$('.text-heading-xlarge.inline.t-24.v-align-middle.break-words');
